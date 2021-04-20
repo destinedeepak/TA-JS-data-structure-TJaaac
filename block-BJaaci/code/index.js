@@ -94,11 +94,11 @@ for (const genre of movies[1].genres) {
 console.log('Rachel McAdams' == movies[0].actors[0]);
 
 // 21. Log if the second actor (index 1) of the second movie is `Natalie Portman` or not (You have to log true or false)
-console.log('Natalie Portman'==movies[1].actors[2])
+console.log('Natalie Portman'==movies[1].actors[1])
 
 // 22. Log if the year of all three movies is greater than `2017` or not one by one. (Log true or false)
 for (const movie of movies) {
-  console.log(movie.year > 2017 ? true : false);
+  console.log(movie.year);
 }
 
 // 23. Log the title of all three movies one by one.
@@ -122,12 +122,8 @@ console.log(`number of actors are: ${movieCount}`)
 // 26. Log the number of genres in all three movies one by one
 var genreCount=0;
 for (const movie of movies) {
-  for (const actor of movie.actors) {
-    console.log(actor);
-    genreCount++;
-  }
+ console.log(movie.genre.length);
 }
-console.log(`number of actors are: ${genreCount}`)
 
 // 27. Log the name of all the movies with more than 1 genre
 console.log(`movies with more than 1 genre: `);
@@ -157,7 +153,7 @@ for (const movie of movies) {
 
 console.log(`name of all the movies with year 2018: `);
 for (const movie of movies) {
-  if(movie.year == 2018){
+  if(movie.  year == 2018){
     console.log(movie.title)
   }
 }
