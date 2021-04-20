@@ -15,7 +15,7 @@ for(let num of numbers){
 console.log(sum);
 
 // 3. Calculate the average of array items and print it to the console using console.log()
-var temp =0;
+var temp = 0 ;
 for(let num of numbers){
     temp +=num;
 }
