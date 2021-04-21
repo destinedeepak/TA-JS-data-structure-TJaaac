@@ -86,7 +86,7 @@ console.log(times(5)); // ['test', 'test', 'test', 'test', 'test']
 function revert(arrays) {
   let tempArr = [];
   j=0;
-  for(let i = arrays.length; i>=0;i--){
+  for(let i = arrays.length-1; i>=0;i--){
     tempArr[j]=arrays[i];
     j++;
   }
