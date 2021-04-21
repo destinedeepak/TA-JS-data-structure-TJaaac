@@ -5,7 +5,7 @@ Only when you don't get it by yourself, comeback again and read the hint
 */
 
 // Write code for the following problems:
-console.log(got); {houses:[]}
+console.log(got);
 
 // You have access to a variable named `got`. Which comes from `data.js` file
 
@@ -79,12 +79,13 @@ console.log(got.houses[0].people.length)
 console.log(got.houses[1].people.length)
 // 14. Add the name and size of people in an object like {Starks: 4, Lannisters: 6} and log the object
 let  numberOfPerson={}
-numberOfPerson.Starks = got.houses[0].people.length;
-numberOfPerson.Lannisters = got.houses[1].people.length;
+for (const house of got.houses) {
+  numberOfPerson[house.name] = house.people.length
+}
 console.log(numberOfPerson);
 
 // 15. Log the name of all the people of all the houses in got one by one
-console.log(`name of all the people of all the houses in got`);
+console.log(`name of all the people of all the houses in got---`);
 for (const house of got.houses) {
   for (const person of house.people) {
     console.log(person.name)
