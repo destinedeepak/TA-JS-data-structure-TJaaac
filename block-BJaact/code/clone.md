@@ -15,7 +15,7 @@ console.log(person2.firstName); // arya, beacuse person2 reference the same addr
 console.log(person.firstName); // arya
 console.log(person.lastName); // 'Doe'
 console.log(person == person2); // true, beacuse person2 reference the same address as person
-console.log(person === person2); // true, beacuse person2 reference the same address as person
+console.log(person === person2); // true, beacuse person2 reference the same address as person and data types are same as well 
 console.log(person.lastName === person2.lastName); // true, beacuse person2 reference the same address as person
 ```
 
@@ -36,7 +36,7 @@ let person = {
 let personTwo = { ...person };
 
 person.firstName = 'Arya';
-person.city = 'Navada';
+person.address.city = 'Navada';
 
 console.log(personTwo.firstName); // `john`, becuase personTwo2 is clone of person 
 
@@ -54,9 +54,9 @@ console.log(person.address === personTwo.address); // true, because field addres
 
 console.log(person.address == personTwo.address); // true, because field address is another non primitive inside a non primitive. So only the reference of the address will be copy using spread operator by default. Since reference are same answer is true.
 
-console.log(personTwo.address.city); // `North 1st`
+console.log(personTwo.address.city); // `Navada`
 
-console.log(person.address.city); // `North 1st`
+console.log(person.address.city); // `Navada`
 
 console.log(person.address.city == personTwo.address.city); // true
 ```
@@ -96,7 +96,7 @@ console.log(person.address === personTwo.address); // false
 
 console.log(person.address == personTwo.address); // fasle
 
-console.log(personTwo.address.city); // `North 1st`
+console.log(personTwo.address.city); // `San Jose`
 
 console.log(person.address.city); // `Navada`
 
@@ -124,7 +124,11 @@ let blogs = [
   },
 ];
 
-let clonedBlogs =[...blogs]
+let clonedBlogs =[
+  {...blogs[0]},
+  {...blogs[1]},
+  {...blogs[2]}
+  ]
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -149,7 +153,15 @@ var questions = [
   },
 ];
 
-let questionClone = [...questions]
+let questionClone = [
+  {
+    ...questions[0],
+    responses: [...questions[0].resposes]
+    },
+  {
+    ...questions[1],
+    responses: [...questions[1].redponses]}
+  ]
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -176,10 +188,13 @@ var allBlogs = {
   ],
 };
 
-let allBlogs = {
-  ...allBlogsClone,
-   authors:{...allBlogs.authors},
-   comments:[...allBlogs.comments]
+let allBlogsClone = {
+  ...allBlogs,
+   author:{...allBlogs.authors},
+   comments:[
+   {...allBlogs.comments[0]},
+   {...allblogs.comments[1]}
+   ]
    }
 ```
 
@@ -212,7 +227,21 @@ let person = [
     },
   },
 ];
-let clonedPerson = [...person];
+let clonedPerson = [
+  {...person[0]},
+  {...person[0]},
+  {...person[2]},
+  {
+    input:{
+      ...person[3].input,
+      first : person[3].input.name.first,
+      last : person[3].input.name.last,
+    },
+    output:{
+      ...person[3].output,
+    }
+  },
+  ];
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
